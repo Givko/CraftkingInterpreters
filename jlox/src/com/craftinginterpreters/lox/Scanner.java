@@ -7,6 +7,7 @@ import java.util.Map;
 
 import static com.craftinginterpreters.lox.TokenType.*;
 
+
 class Scanner {
     private final String source;
     private final List<Token> tokens = new ArrayList<>();
@@ -64,6 +65,8 @@ class Scanner {
             case '+': addToken(PLUS); break;
             case ';': addToken(SEMICOLON); break;
             case '*': addToken(STAR); break;
+            case '?': addToken(QUESTION_MARK); break;
+            case ':': addToken(COLON); break;
             case '!':
                 addToken(match('=') ? BANG_EQUAL : BANG);
                 break;
@@ -80,6 +83,8 @@ class Scanner {
                 if (match('/')) {
                     // A comment goes until the end of the line.
                     while (peek() != '\n' && !isAtEnd()) advance();
+                } else if (match('*')) {
+                    multilineComment();
                 } else {
                     addToken(SLASH);
                 }
@@ -126,7 +131,9 @@ class Scanner {
     }
 
     private char peekNext() {
-        if (current + 1 >= source.length()) return '\0';
+        if (current + 1 >= source.length())
+            return '\0';
+
         return source.charAt(current + 1);
     }
 
@@ -147,6 +154,24 @@ class Scanner {
 
     private boolean isDigit(char c) {
         return c >= '0' && c <= '9';
+    }
+
+    private void multilineComment() {
+        // A comment goes until we find the closing */.
+        while (!(peek() == '*' && peekNext() == '/') && !isAtEnd()) {
+            if (peek() == '\n') line++;
+
+            advance();
+        }
+
+        if (isAtEnd()) {
+            Lox.error(line, "Unterminated multiline comment missing \"*/\".");
+            return;
+        }
+
+        //Closing out the */
+        advance();
+        advance();
     }
 
     private void string() {

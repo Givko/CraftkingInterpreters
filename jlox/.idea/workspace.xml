@@ -17,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -26,7 +27,7 @@
     <toolWindowToFront>false</toolWindowToFront>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/com/craftinginterpreters/lox/Scaner.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/src/com/craftinginterpreters/lox/Parser.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/src/com/craftinginterpreters/lox/TokenType.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectId" id="2dDUWsm4lVFXjqz2ZyJEaSuiCZ6" />
@@ -44,16 +45,39 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.com.craftinginterpreters.lox.Lox">
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2" />
+    </configuration>
+    <configuration name="com.craftinginterpreters.lox.AstPrinter" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.AstPrinter" />
+      <module name="jlox" />
+      <method v="2" />
+    </configuration>
+    <configuration name="com.craftinginterpreters.lox.Lox" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.Lox" />
+      <module name="jlox" />
+      <option name="PROGRAM_PARAMETERS" value=".\test.txt" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="com.craftinginterpreters.lox.Resolver" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.lox.Resolver" />
+      <module name="jlox" />
+      <option name="PROGRAM_PARAMETERS" value=".\test.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration name="com.craftinginterpreters.tool.GenerateAst" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.craftinginterpreters.tool.GenerateAst" />
+      <module name="jlox" />
+      <option name="PROGRAM_PARAMETERS" value="." />
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="TEST_OBJECT" value="class" />
@@ -62,6 +86,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.com.craftinginterpreters.lox.Resolver" />
+      <item itemvalue="Application.com.craftinginterpreters.lox.AstPrinter" />
+      <item itemvalue="Application.com.craftinginterpreters.tool.GenerateAst" />
+      <item itemvalue="Application.com.craftinginterpreters.lox.Lox" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/craftinginterpreters/lox/craftinginterpreters/lox/Scanner.java</url>
+          <line>193</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
 </project>
